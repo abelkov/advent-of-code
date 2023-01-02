@@ -21,7 +21,7 @@ class Day12 {
     }
 }
 
-class JsonParser(private val input: String) {
+private class JsonParser(private val input: String) {
     private var i = 0
     private val numberRegex = "-|\\d".toRegex()
 
@@ -91,7 +91,7 @@ class JsonParser(private val input: String) {
     }
 }
 
-sealed class JsonEntity {
+private sealed class JsonEntity {
     abstract fun eval(): Int
 
     data class JsonString(val value: String) : JsonEntity() {
