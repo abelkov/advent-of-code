@@ -20,3 +20,16 @@ fun <T> Set<T>.permutations(): Set<List<T>> {
 
     return allPermutations(toList())
 }
+
+fun <T> List<T>.combinations(): List<List<T>> {
+    val combinations = mutableListOf<List<T>>(listOf())
+    for (element in this) {
+        val existingCombinations = combinations.toList()
+        for (comb in existingCombinations) {
+            val mutComb = comb.toMutableList()
+            mutComb += element
+            combinations += mutComb
+        }
+    }
+    return combinations
+}
